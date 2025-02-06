@@ -9,10 +9,12 @@ jobs:
   ping-supabase:
     runs-on: ubuntu-latest
     steps:
-      # Ping du projet 1
       - name: Appel API Projet 1 - Table services
-        run: curl -X GET "https://nobtdribfdiuwdmjavww.supabase.co/rest/v1/services" -H "apikey: ${{ secrets.SUPABASE_API_KEY_PROJECT1 }}"
+        run: |
+          curl -X GET "https://nobtdribfdiuwdmjavww.supabase.co/rest/v1/services" \
+          -H "apikey: ${{ secrets.SUPABASE_API_KEY_PROJECT1 }}"
 
-      # Ping du projet 2
       - name: Appel API Projet 2 - Table services
-        run: curl -X GET "https://koflvmxacocugcswpyrc.supabase.co/rest/v1/services" -H "apikey: ${{ secrets.SUPABASE_API_KEY_PROJECT2 }}"
+        run: |
+          curl -X GET "https://koflvmxacocugcswpyrc.supabase.co/rest/v1/services" \
+          -H "apikey: ${{ secrets.SUPABASE_API_KEY_PROJECT2 }}"
